@@ -23,3 +23,5 @@ aws lambda invoke \
   - `saito-biprogy-output-2026`
 - [x] LinkedIn にて学習プロセスの外部発信を開始
 - [ ] 次回：S3イベントトリガーによる Lambda 自動実行の実装
+
+- [x] テスト用旅行写真（松江城）を S3 バケットへアップロード完了
