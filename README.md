@@ -16,3 +16,10 @@ aws lambda invoke \
   --cli-binary-format raw-in-base64-out \
   results/calculation_result.json
 
+---
+### 📅 2026-03-01 進捗
+- [x] AWS S3 バケットの構築（入力用・出力用の2面構成）
+  - `saito-biprogy-input-2026`
+  - `saito-biprogy-output-2026`
+- [x] LinkedIn にて学習プロセスの外部発信を開始
+- [ ] 次回：S3イベントトリガーによる Lambda 自動実行の実装
