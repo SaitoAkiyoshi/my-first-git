@@ -1,34 +1,18 @@
-1. タイトルと概要
-# My First Lambda & Git Project
+# My First Lambda Project 🚀
 
-AWS Lambdaを実行し、その実行結果をEC2からGitHubへ自動（手動）連携する学習用プロジェクトです。
+このリポジトリは、AWS Lambda を使用した残業代計算システムの学習記録です。
+割増率 **1.35** を適用した計算ロジックを実装しています。
 
-2. 主な機能・役割
-🚀 Features
-AWS Lambda連携: aws lambda invoke コマンドを使用して、クラウド上の関数を呼び出し。
+## 📁 ディレクトリ構成
+- `src/`: Lambda 関数のソースコード (`lambda_function.py`)
+- `results/`: EC2 から Lambda を呼び出した際の計算結果エビデンス
+- `.gitignore`: 秘密鍵などの機密ファイルを保護するための設定
 
-データ保存: 実行結果を output.json としてローカル環境（EC2）に保存。
+## 🛠️ 実行方法 (EC2 からの呼び出し例)
+```bash
+aws lambda invoke \
+  --function-name MyFirstFunction \
+  --payload '{"base_pay": 1000, "overtime_hours": 10}' \
+  --cli-binary-format raw-in-base64-out \
+  results/calculation_result.json
 
-バージョン管理: Gitを使用して、実行ログの履歴を管理。
-
-3. 環境（技術スタック）
-🛠️ Tech Stack
-Cloud: AWS (EC2, Lambda)
-
-CLI: AWS CLI v2
-
-Version Control: Git / GitHub
-
-SSH: ed25519 key pair for secure authentication
-
-4. 使い方（再現手順）
-💻 Usage
-Lambdaの実行
-
-GitHubへの反映
-
-5. 作者情報
-👤 Author
-SaitoAkiyoshi
-
-GitHub:
