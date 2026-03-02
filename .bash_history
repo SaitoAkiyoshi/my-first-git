@@ -46,3 +46,36 @@ cat ~/.ssh/id_rsa.pub
 cat ~/.ssh/id_ed25519.pub
 git push origin main
 git push origin master
+aws lambda invoke   --function-name MyFirstFunction   --payload '{"base_pay": 1000, "overtime_hours": 10}'   --cli-binary-format raw-in-base64-out   calculation_result.json
+cat calculation_result.json
+aws lambda invoke   --function-name MyFirstFunction   --payload '{"base_pay": 1000, "overtime_hours": 10}'   --cli-binary-format raw-in-base64-out   calculation_result.json
+cat calculation_result.json
+git add calculation_result.json
+git commit -m "割増率1.35を使用した残業代計算の実行結果"
+git push origin master
+git pull origin master
+git push origin master
+git config pull.rebase false
+git pull origin master
+git push origin master
+mkdir src results
+mv lambda_function.py src/
+touch src/lambda_function.py
+nano src/lambda_function.py
+mv output.json results/
+mv calculation_result.json results/
+git add .
+git commit -m "Organize folder structure: code in src/ and results in results/"
+git push origin master
+git rm --cached .ssh/id_ed25519
+git rm --cached .ssh/id_ed25519.pub
+echo ".ssh/" >> .gitignore
+git add .
+git commit -m "Remove secrets and update directory structure"
+git push origin master
+git pull origin master
+nano README.md
+git pull origin master
+git add README.md
+git commit -m "Refresh README with organized structure"
+git push origin master
