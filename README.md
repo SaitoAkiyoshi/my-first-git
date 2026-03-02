@@ -32,3 +32,5 @@ aws lambda invoke \
 - [x] Python コードを修正し、S3 イベントからファイル名（`IMG_0103.jpg`等）を動的に取得成功 🚀
 
 > **Memo:** AWS のログはデフォルト UTC。設定変更で JST (+09:00) 表示ができることを学習。
+- [x] AWS SDK (boto3) を使用した、バケット間ファイル転送の実装完了 📦
+- [x] IAM ポリシーによる権限エラー (AccessDenied) を自力で解決 🛠️
